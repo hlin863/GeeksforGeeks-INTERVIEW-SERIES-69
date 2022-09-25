@@ -79,7 +79,7 @@ class Solution:
         temp_list = list(range(x[0], x[1] + 1))
 
         # replace the for loop with another map
-        temp_result = list(map(lambda a : self.get_count_val(A, a), temp_list)))
+        temp_result = list(map(lambda a : self.get_count_val(A, a), temp_list))
 
         """
             
@@ -169,7 +169,7 @@ print()
 
 print(Solution().solveQueries(5, 2, [1, 1, 1, 1, 1], [[0, 4, 4], [0, 4, 5]]))
 
-print(Solution().solveQueries(12, 2, [1,2,3,4,5,6,7,8,9,10,11,12], [[0, 4, 4], [0, 4, 5]]))
+print(Solution().solveQueries(12, 2, [2,2,3,4,5,6,7,8,9,7,11,12], [[0, 4, 4], [0, 4, 5]]))
 
 print()
 
