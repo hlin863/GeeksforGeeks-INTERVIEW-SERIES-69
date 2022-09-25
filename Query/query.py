@@ -6,7 +6,43 @@ import collections
 class Solution:
     def solveQueries(self, N : int, num : int, A : List[int], Q : List[List[int]]) -> List[int]:
         # code here
+
+        """
+        MAP = map()
+        foreach(int x in A){
+            if map contains a
+                map[a] += 1
+        }
+
+        map = collections.defaultdict(int)
+
+        for a in A:
+            # check if map contains a
+            if a in map:
+                map[a] += 1
+            else:
+                map[a] = 1
+
+        # display the array
+        print("A : {}".format(A))
+
+        # display the map
+        print("Map: {}".format(map))
+
+        print()
+
+
+        """
+
+        result = map(lambda x : self.get_count(A, x), Q)
+
+        result = list(result)    
+
+        return result
         
+        """
+        Version 1: loop versin
+
         result = []
         
         for q in Q:
@@ -32,8 +68,35 @@ class Solution:
             
 
         return result
+
+        """
+    
+    def get_count(self, A, x):
+
+        temp_result = []
+            
+        for index in range(x[0], x[1] + 1):
+
+            element = A[index]
+
+            A_temp = A[index:]
+
+            # count the number in A_temp that are the same as element
+
+            count = A_temp.count(element)
+
+            temp_result.append(count)
+
+        # count the number of elements in temp_result that equal q[2]
+        count = temp_result.count(x[2])
+
+        return count
     
     def test_optimisation(self):
+        """
+        Test function to check if there is a suitable method to optimise 
+        the code.
+        """
 
         arr = [1, 2, 3, 4, 5]
 
@@ -73,6 +136,12 @@ class IntMatrix:
             print()
  
 print(Solution().solveQueries(5, 3, [1, 1, 3, 4, 3], [[0, 2, 2], [0, 2, 1], [0, 4, 2]]))
+
+# query : [a, b, c]
+
+# a = start index
+# b = last index
+# c = number to track the occurences. 
 
 print()
 
