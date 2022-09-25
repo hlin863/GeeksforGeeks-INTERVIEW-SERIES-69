@@ -32,7 +32,15 @@ class Solution:
             
 
         return result
+    
+    def test_optimisation(self):
 
+        arr = [1, 2, 3, 4, 5]
+
+        return [self.times_five(x) for x in arr]
+
+    def times_five(self, x):
+        return x * 5
 
 #{ 
 #  Driver Code Starts
@@ -69,3 +77,7 @@ print(Solution().solveQueries(5, 3, [1, 1, 3, 4, 3], [[0, 2, 2], [0, 2, 1], [0, 
 print()
 
 print(Solution().solveQueries(5, 2, [1, 1, 1, 1, 1], [[0, 4, 4], [0, 4, 5]]))
+
+print()
+
+print(Solution().test_optimisation())

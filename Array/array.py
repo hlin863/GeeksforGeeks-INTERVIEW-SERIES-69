@@ -2,8 +2,20 @@ import collections
 
 class Solution:
     def optimalArray(self, n : int, a : list[int]) -> list[int]:
-        # code here        
-        
+        # code here
+
+        # list of differences
+        differences = []
+
+        # loop through the list to find the absolute difference between list[i] and i
+
+        for i in range(len(a)):
+            diff = abs(a[i] - i)
+            differences.append(diff)
+
+        return differences
+
+    """
         # find the most common element
         mode = self.most_common(a)
 
@@ -19,5 +31,6 @@ class Solution:
     
     def most_common(self, lst):
         return max(set(lst), key = lst.count)
+    """
 
-print(Solution().optimalArray(5, [1, 2, 3, 4, 5]))
+print(Solution().optimalArray(4, [1, 6, 9, 12]))
