@@ -74,6 +74,14 @@ class Solution:
     def get_count(self, A, x):
 
         temp_result = []
+
+        # generate a list of values from x[0] to x[1]
+        temp_list = list(range(x[0], x[1] + 1))
+
+        # replace the for loop with another map
+        temp_result = list(map(lambda a : self.get_count_val(A, a), list(range(x[0], x[1] + 1))))
+
+        """
             
         for index in range(x[0], x[1] + 1):
 
@@ -86,9 +94,23 @@ class Solution:
             count = A_temp.count(element)
 
             temp_result.append(count)
+        
+        """
 
         # count the number of elements in temp_result that equal q[2]
         count = temp_result.count(x[2])
+
+        return count
+    
+    def get_count_val(self, A, x):
+
+        element = A[x]
+
+        A_temp = A[x:]
+
+        # count the number in A_temp that are the same as element
+
+        count = A_temp.count(element)
 
         return count
     
